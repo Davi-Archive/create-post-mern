@@ -10,11 +10,11 @@ console.log('Hello World')
 
 app.use("/public", express.static(__dirname + "/public")); //middleware, devolve CSS da pasta public. app.use(path , caminho)
 
-app.get("/json")
-    res.json({"message": "Hello json"})
-
-
-
+app.get("/json", (req, res)=>{
+    res.json({
+        message: "Hello json"
+    })
+})
 
 
 
