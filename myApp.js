@@ -12,14 +12,13 @@ console.log('Hello World')
 app.use("/public", express.static(__dirname + "/public")); //middleware, devolve CSS da pasta public. app.use(path , caminho)
 
 app.get("/json", (req, res)=>{
-    var response = "Hello World".toUpperCase(); // now becomes "HELLO WORLD"
     res.json({
         message: "Hello json"
     })
     if (process.env.MESSAGE_STYLE === "uppercase") {
-        response = "Hello World".toUpperCase();
+        res.json.message.toUpperCase();
       } else {
-        response = "Hello World";
+        res.json.message;
       }
 })
 
